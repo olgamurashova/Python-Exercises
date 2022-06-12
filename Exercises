@@ -50,3 +50,26 @@ if float(hours) > 40:
     pay =  float(reg_hours) * float(rate) + (float(rate) * 1.5) * (float(hours) - 40)
 
 print("Pay: ", pay)
+
+----------------------
+4. Infinite loop, returning total with count and average once entered input is 'done'
+
+isNotFinished = True
+count = 0
+total = 0
+
+while isNotFinished:
+    user_input = input('Enter a number: ')
+    if user_input == 'done' or user_input == 'Done':
+        break
+    try:
+        user_input_num = float(user_input)
+    except:
+        print('Ivalid input')
+        continue
+    count = count + 1
+    total = user_input_num + total
+    avg = total/count
+                   
+    
+print(total, count, avg)
